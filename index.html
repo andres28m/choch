@@ -323,24 +323,24 @@
                 let currentVolume = volume[volume.length - 1];
                 let currentRSI = rsi[rsi.length - 1];
                 let currentMACD = macd[macd.length - 1];
-                let chochSignal = { message: "No hay CHoCH", color: "gray" };
+                let chochSignal = { message: "No hay Señal", color: "gray" };
                 let sma200 = calculateSMA(candles, 200);
                 let isUptrend = sma200 !== null && currentPrice > sma200;
 
                 if (lastSwingHigh && currentPrice > lastSwingHigh.price) {
                     if (currentVolume > averageVolume(volume) * 1.5 && currentRSI > 50 && currentMACD > 0 && !isUptrend) {
-                        chochSignal.message = "CHoCH alcista confirmado: Cambio de tendencia al alza";
+                        chochSignal.message = "Alcista confirmado: Cambio de tendencia al alza";
                         chochSignal.color = "green";  // Color para alcista confirmado
                     } else {
-                        chochSignal.message = "CHoCH alcista débil: Precaución";
+                        chochSignal.message = "Alcista débil: Precaución";
                         chochSignal.color = "lightgreen";  // Color para alcista débil
                     }
                 } else if (lastSwingLow && currentPrice < lastSwingLow.price) {
                     if (currentVolume > averageVolume(volume) * 1.5 && currentRSI < 50 && currentMACD < 0 && isUptrend) {
-                        chochSignal.message = "CHoCH bajista confirmado: Cambio de tendencia a la baja";
+                        chochSignal.message = "Bajista confirmado: Cambio de tendencia a la baja";
                         chochSignal.color = "red";  // Color para bajista confirmado
                     } else {
-                        chochSignal.message = "CHoCH bajista débil: Precaución";
+                        chochSignal.message = "Bajista débil: Precaución";
                         chochSignal.color = "orange";  // Color para bajista débil
                     }
                 }
@@ -409,7 +409,7 @@
                 const chochDisplay = document.getElementById("choch");
 
                 // Mostrar el mensaje y aplicar el color
-                chochDisplay.textContent = `CHoCH: ${chochResult.message}`;
+                chochDisplay.textContent = `Mercado: ${chochResult.message}`;
                 chochDisplay.style.color = chochResult.color;
 
                 const currentPrice = await fetchCurrentPrice(selectedCurrency);
