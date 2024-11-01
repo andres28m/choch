@@ -77,11 +77,11 @@
             font-size: 24px;
             margin-top: 20px;
         }
-        #market-hours {
+        <!--#market-hours {
             margin-top: 20px;
             font-size: 16px;
             text-align: center;
-        }
+        }-->
         #currentPrice {
             font-size: 20px;
             font-weight: bold;
@@ -100,6 +100,18 @@
             border: 1px solid #828181;
             border-radius: 5px;
             background-color: #2a2a2a;   
+        }
+
+        .hls {
+            background-color: #1e1e2f;
+            box-shadow: 0 4px 12px rgba(0, 255, 128, 0.3);
+            border-radius: 8px;
+            padding: 5px;
+            text-align: center;
+            border-left: 5px solid #00e6d7;
+            transition: transform 0.3s ease;
+            height: 110px;
+            font-size: 14px;            
         }
     </style>
 </head>
@@ -164,7 +176,7 @@
         <button id="stopButton" class="stop-button hidden">Detener</button>
 
         <!-- Horarios de los mercados -->
-        <div id="market-hours">
+        <div class="hls">
             <p><strong>Horarios de los 4 mercados más grandes:</strong></p>
             <p id="nyMarket">Nueva York: 13:00 - 21:00 UTC</p>
             <p id="londonMarket">Londres: 08:00 - 16:00 UTC</p>
