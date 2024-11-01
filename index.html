@@ -493,5 +493,32 @@
             }, 60000);
         });
     </script>
+    
+<script> 
+    
+    function displayMarketHours() {
+            const localTime = new Date();
+            const nyTime = new Date(localTime.toLocaleString("en-US", { timeZone: "America/New_York" }));
+            const londonTime = new Date(localTime.toLocaleString("en-US", { timeZone: "Europe/London" }));
+            const tokyoTime = new Date(localTime.toLocaleString("en-US", { timeZone: "Asia/Tokyo" }));
+            const sydneyTime = new Date(localTime.toLocaleString("en-US", { timeZone: "Australia/Sydney" }));
+
+            document.getElementById("nyMarket").textContent = `Nueva York: ${nyTime.toLocaleTimeString()} (Diferencia: ${nyTime.getHours() - localTime.getHours()} horas)`;
+            document.getElementById("londonMarket").textContent = `Londres: ${londonTime.toLocaleTimeString()} (Diferencia: ${londonTime.getHours() - localTime.getHours()} horas)`;
+            document.getElementById("tokyoMarket").textContent = `Tokio: ${tokyoTime.toLocaleTimeString()} (Diferencia: ${tokyoTime.getHours() - localTime.getHours()} horas)`;
+            document.getElementById("sydneyMarket").textContent = `Sídney: ${sydneyTime.toLocaleTimeString()} (Diferencia: ${sydneyTime.getHours() - localTime.getHours()} horas)`;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            displayMarketHours();
+
+            // Actualizar cada minuto
+            setInterval(() => {
+                displayMarketHours();
+            }, 60000);
+        });
+    
+    </script>
+    
 </body>
 </html>
