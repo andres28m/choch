@@ -77,11 +77,7 @@
             font-size: 24px;
             margin-top: 20px;
         }
-        <!--#market-hours {
-            margin-top: 20px;
-            font-size: 16px;
-            text-align: center;
-        }-->
+        
         #currentPrice {
             font-size: 20px;
             font-weight: bold;
@@ -104,6 +100,7 @@
 
         .hls {
             background-color: #1e1e2f;
+            color: #ffffff;
             box-shadow: 0 4px 12px rgba(0, 255, 128, 0.3);
             border-radius: 8px;
             padding: 5px;
@@ -177,12 +174,12 @@
 
         <!-- Horarios de los mercados -->
         <div class="hls">
-            <!-- Contenedores para mostrar la hora local de cada mercado -->
+    <!-- Contenedores para mostrar la hora local de cada mercado -->
     <div class="local-time" id="nyMarket"></div>
     <div class="local-time" id="londonMarket"></div>
     <div class="local-time" id="tokyoMarket"></div>
     <div class="local-time" id="sydneyMarket"></div>
-        </div>
+</div>
     </div>
 
     <script>
@@ -461,7 +458,6 @@
             document.getElementById("stopButton").classList.add("hidden");
         });
 
-        // Función para mostrar la hora local y la diferencia con la hora de Nueva York
         function displayMarketHours() {
             const localTime = new Date();
             const nyTime = new Date(localTime.toLocaleString("en-US", { timeZone: "America/New_York" }));
